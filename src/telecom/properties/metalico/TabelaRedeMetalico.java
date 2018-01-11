@@ -8,10 +8,15 @@ package telecom.properties.metalico;
 import br.net.gvt.efika.customer.EfikaCustomer;
 import java.math.BigInteger;
 import telecom.properties.Validavel;
+import telecom.properties.ValidavelAbs;
 
-public class TabelaRedeMetalico implements Validavel {
+public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
 
     private BigInteger pctDown, pctUp, crcDown, crcUp, fecDown, fecUp, resync, tempoMedicao;
+
+    public TabelaRedeMetalico(String nome) {
+        super("Confiabilidade de Rede");
+    }
 
     /**
      * *
@@ -26,11 +31,6 @@ public class TabelaRedeMetalico implements Validavel {
             return isPctSuficiente();
         }
         return false;
-    }
-
-    @Override
-    public String getNome() {
-        return "Confiabilidade de Rede";
     }
 
     public BigInteger getResync() {

@@ -9,22 +9,19 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 import java.util.ArrayList;
 import java.util.List;
 import telecom.properties.Validavel;
+import telecom.properties.ValidavelAbs;
 
 /**
  *
  * @author G0041775
  */
-public class AlarmesGpon implements Validavel {
+public class AlarmesGpon extends ValidavelAbs implements Validavel {
 
     private List<String> listAlarmes;
 
     public AlarmesGpon() {
+        super("Lista de Alarmes");
         this.listAlarmes = new ArrayList<>();
-    }
-
-    @Override
-    public String getNome() {
-        return "Lista de Alarmes";
     }
 
     public List<String> getListAlarmes() {

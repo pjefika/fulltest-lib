@@ -8,25 +8,21 @@ package telecom.properties;
 import br.net.gvt.efika.customer.EfikaCustomer;
 import java.math.BigInteger;
 
-public class ReConexao implements Validavel {
+public class ReConexao extends ValidavelAbs implements Validavel {
 
     private BigInteger reconnects;
+    
+    private static final String NOME = "Reconexões";
 
     public ReConexao() {
+        super(NOME);
     }
 
-    public ReConexao(BigInteger reconnects) {
-        this.reconnects = reconnects;
-    }
-
+   
     @Override
     public Boolean validar(EfikaCustomer cust) {
         return reconnects.compareTo(new BigInteger("3")) <= 0;
     }
 
-    @Override
-    public String getNome() {
-        return "Reconexões";
-    }
 
 }

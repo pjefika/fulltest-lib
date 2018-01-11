@@ -12,7 +12,7 @@ import java.math.BigInteger;
  *
  * @author G0041775
  */
-public abstract class VlanAbstract implements Validavel {
+public abstract class VlanAbstract extends ValidavelAbs implements Validavel {
 
     private Integer cvlan;
 
@@ -22,7 +22,13 @@ public abstract class VlanAbstract implements Validavel {
 
     private EnumEstadoVlan state;
 
+    public VlanAbstract(String nome) {
+        super("VLAN");
+    }
+    
+
     public VlanAbstract(Integer cvlan, Integer svlan, EnumEstadoVlan estado) {
+        super("VLAN");
         this.cvlan = cvlan;
         this.svlan = svlan;
         this.state = estado;
@@ -30,6 +36,7 @@ public abstract class VlanAbstract implements Validavel {
 
     @Deprecated
     public VlanAbstract(Integer p100, Integer cvlan) {
+        super("VLAN");
         this.cvlan = p100;
         this.svlan = cvlan;
         this.state = EnumEstadoVlan.UP;

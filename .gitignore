@@ -22,3 +22,5 @@ hs_err_pid*
 /fulltest-lib/nbproject/private/
 /fulltest-lib/dist/
 /fulltest-lib/build/
+/build/
+/dist/

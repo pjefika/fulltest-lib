@@ -6,7 +6,6 @@
 package telecom.properties;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
-import java.math.BigInteger;
 
 /**
  *

@@ -8,14 +8,19 @@ package telecom.properties.gpon;
 import br.net.gvt.efika.customer.EfikaCustomer;
 import br.net.gvt.efika.enums.OrigemPlanta;
 import telecom.properties.Validavel;
+import telecom.properties.ValidavelAbs;
 
 /**
  *
  * @author G0041775
  */
-public class SerialOntGpon implements Validavel {
+public class SerialOntGpon extends ValidavelAbs implements Validavel {
 
     private String serial, slot, porta, idOnt;
+
+    public SerialOntGpon(String nome) {
+        super("Associação Serial ONT");
+    }
 
     public String getSlot() {
         return slot;
@@ -51,7 +56,7 @@ public class SerialOntGpon implements Validavel {
 
     @Override
     public Boolean validar(EfikaCustomer e) {
-        if(e.getRede().getPlanta() == OrigemPlanta.VIVO1){
+        if (e.getRede().getPlanta() == OrigemPlanta.VIVO1) {
             return (!this.serial.isEmpty()) && this.idOnt.equalsIgnoreCase(e.getRede().getIdOnt());
         }
         return !this.serial.isEmpty();
