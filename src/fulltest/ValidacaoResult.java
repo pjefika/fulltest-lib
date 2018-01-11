@@ -5,6 +5,8 @@
  */
 package fulltest;
 
+import telecom.properties.ValidavelAbs;
+
 /**
  *
  * @author G0042204
@@ -19,7 +21,7 @@ public class ValidacaoResult {
 
     private Boolean foiCorrigido;
 
-    private Object result;
+    private ValidavelAbs result;
 
     public ValidacaoResult() {
     }
@@ -31,7 +33,7 @@ public class ValidacaoResult {
         this.foiCorrigido = foiCorrigido;
     }
 
-    public ValidacaoResult(String nome, String mensagem, Boolean resultado, Object result, Boolean foiCorrigido) {
+    public ValidacaoResult(String nome, String mensagem, Boolean resultado, ValidavelAbs result, Boolean foiCorrigido) {
         this.nome = nome;
         this.mensagem = mensagem;
         this.resultado = resultado;
@@ -63,11 +65,11 @@ public class ValidacaoResult {
         this.resultado = resultado;
     }
 
-    public Object getResult() {
+    public ValidavelAbs getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(ValidavelAbs result) {
         this.result = result;
     }
 

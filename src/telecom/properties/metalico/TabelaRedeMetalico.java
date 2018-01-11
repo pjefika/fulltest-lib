@@ -15,7 +15,9 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
 
     private BigInteger pctDown, pctUp, crcDown, crcUp, fecDown, fecUp, resync, tempoMedicao;
 
-    public TabelaRedeMetalico(String nome) {
+    private Boolean crcOk, pctSuficiente;
+    
+    public TabelaRedeMetalico() {
         super(TelecomPropertiesEnum.TabelaRedeMetalico);
     }
 

@@ -5,12 +5,19 @@
  */
 package telecom.properties.metalico;
 
+import telecom.properties.TelecomPropertiesEnum;
+import telecom.properties.ValidavelAbs;
+
 /**
  *
  * @author G0041775
  * @param <T>
  */
-public abstract class TabelaParametrosAbstract<T> {
+public abstract class TabelaParametrosAbstract<T> extends ValidavelAbs{
+
+    public TabelaParametrosAbstract() {
+        super(TelecomPropertiesEnum.TabelaParametrosMetalico);
+    }
 
     public abstract Boolean validar(T t);
 

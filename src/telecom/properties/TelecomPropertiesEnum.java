@@ -5,6 +5,13 @@
  */
 package telecom.properties;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  *
  * @author G0041775
@@ -18,7 +25,7 @@ public enum TelecomPropertiesEnum {
     VlanBanda("Vlan Banda Larga"),
     VlanMulticast("Vlan Multicast"),
     VlanVod("Vlan VoD/IPTV"),
-    VlanVoip("VlanVoIP"),
+    VlanVoip("Vlan VoIP"),
     AlarmesGpon("Lista de Alarmes"),
     SerialOntGpon("Associação Serial ONT"),
     TabelaParametrosGpon("Parâmetros Ópticos"),
@@ -32,12 +39,24 @@ public enum TelecomPropertiesEnum {
         valor = nome;
     }
 
+//    @JsonValue
     public String getNome() {
         return valor;
     }
 
     public static TelecomPropertiesEnum find(String nome) {
         return TelecomPropertiesEnum.valueOf(nome);
+    }
+
+    private static Map<String, TelecomPropertiesEnum> FORMAT_MAP = Stream
+            .of(TelecomPropertiesEnum.values())
+            .collect(Collectors.toMap(s -> s.valor, Function.identity()));
+
+    @JsonCreator // This is the factory method and must be static
+    public static TelecomPropertiesEnum fromString(String string) {
+        return Optional
+                .ofNullable(FORMAT_MAP.get(string))
+                .orElseThrow(() -> new IllegalArgumentException(string));
     }
 
 }
