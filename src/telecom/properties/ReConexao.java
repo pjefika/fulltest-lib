@@ -18,9 +18,22 @@ public class ReConexao extends ValidavelAbs implements Validavel {
         super(NOME);
     }
 
+    public ReConexao(BigInteger reconnects) {
+        super(NOME);
+        this.reconnects = reconnects;
+    }
+
     @Override
     public Boolean validar(EfikaCustomer cust) {
         return reconnects.compareTo(new BigInteger("3")) <= 0;
+    }
+
+    public BigInteger getReconnects() {
+        return reconnects;
+    }
+
+    public void setReconnects(BigInteger reconnects) {
+        this.reconnects = reconnects;
     }
 
 }

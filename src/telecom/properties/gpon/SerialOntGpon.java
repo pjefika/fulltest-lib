@@ -19,7 +19,7 @@ public class SerialOntGpon extends ValidavelAbs implements Validavel {
 
     private String serial, slot, porta, idOnt;
 
-    public SerialOntGpon(String nome) {
+    public SerialOntGpon() {
         super(TelecomPropertiesEnum.SerialOntGpon);
     }
 
