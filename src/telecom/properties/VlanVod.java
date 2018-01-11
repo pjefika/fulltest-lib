@@ -17,13 +17,13 @@ public class VlanVod extends VlanAbstract {
         super(null, null);
     }
 
-    @Override
-    public String getNome() {
-        return "Vlan VoD/IPTV";
-    }
+//    @Override
+//    public String getNome() {
+//        return TelecomPropertiesEnum.VlanVod.getNome();
+//    }
 
     public VlanVod(Integer cvlan, Integer svlan, EnumEstadoVlan est) {
-        super(cvlan, svlan, est);
+        super(cvlan, svlan, est, TelecomPropertiesEnum.VlanVod);
     }
 
     @Override

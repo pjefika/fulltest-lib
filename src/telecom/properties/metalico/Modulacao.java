@@ -6,6 +6,7 @@
 package telecom.properties.metalico;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
+import telecom.properties.TelecomPropertiesEnum;
 import telecom.properties.Validavel;
 import telecom.properties.ValidavelAbs;
 import telecom.velocidade.Modulacoes;
@@ -21,7 +22,7 @@ public class Modulacao extends ValidavelAbs implements Validavel {
     private Modulacoes modulEnum;
 
     public Modulacao() {
-        super("Modulação");
+        super(TelecomPropertiesEnum.Modulacao);
     }
 
     public String getModulacao() {

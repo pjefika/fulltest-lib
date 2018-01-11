@@ -17,13 +17,13 @@ public class VlanVoip extends VlanAbstract {
         super(null, null);
     }
 
-    @Override
-    public String getNome() {
-        return "Vlan VoIP";
-    }
+//    @Override
+//    public String getNome() {
+//        return TelecomPropertiesEnum.VlanVoip.getNome();
+//    }
 
     public VlanVoip(Integer cvlan, Integer svlan, EnumEstadoVlan est) {
-        super(cvlan, svlan, est);
+        super(cvlan, svlan, est, TelecomPropertiesEnum.VlanVoip);
     }
 
 

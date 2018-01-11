@@ -8,6 +8,7 @@ package telecom.properties.gpon;
 import br.net.gvt.efika.customer.EfikaCustomer;
 import java.util.ArrayList;
 import java.util.List;
+import telecom.properties.TelecomPropertiesEnum;
 import telecom.properties.Validavel;
 import telecom.properties.ValidavelAbs;
 
@@ -20,7 +21,7 @@ public class AlarmesGpon extends ValidavelAbs implements Validavel {
     private List<String> listAlarmes;
 
     public AlarmesGpon() {
-        super("Lista de Alarmes");
+        super(TelecomPropertiesEnum.AlarmesGpon);
         this.listAlarmes = new ArrayList<>();
     }
 

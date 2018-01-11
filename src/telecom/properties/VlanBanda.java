@@ -14,16 +14,16 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 public class VlanBanda extends VlanAbstract {
 
     public VlanBanda() {
-        super(null, null, null);
+        super(null, null, null, TelecomPropertiesEnum.VlanBanda);
     }
 
-    @Override
-    public String getNome() {
-        return "Vlan Banda Larga";
-    }
+//    @Override
+//    public String getNome() {
+//        return TelecomPropertiesEnum.VlanBanda.getNome();
+//    }
 
     public VlanBanda(Integer cvlan, Integer svlan, EnumEstadoVlan estado) {
-        super(cvlan, svlan, estado);
+        super(cvlan, svlan, estado, TelecomPropertiesEnum.VlanBanda);
     }
 
     @Override

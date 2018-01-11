@@ -11,17 +11,17 @@ package telecom.properties;
  */
 public abstract class ValidavelAbs {
 
-    private String nome;
+    private TelecomPropertiesEnum nome;
 
-    public ValidavelAbs(String nome) {
+    public ValidavelAbs(TelecomPropertiesEnum nome) {
         this.nome = nome;
     }
 
     public String getNome() {
-        return nome;
+        return nome.getNome();
     }
 
-    public void setNome(String nome) {
+    public void setNome(TelecomPropertiesEnum nome) {
         this.nome = nome;
     }
 

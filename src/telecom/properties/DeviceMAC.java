@@ -14,7 +14,7 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 public class DeviceMAC extends ValidavelAbs implements Validavel {
 
     private String mac = "";
-    private static String NOME = "MAC do Equipamento";
+    private static TelecomPropertiesEnum NOME = TelecomPropertiesEnum.DeviceMAC;
 
     public DeviceMAC() {
         super(NOME);
@@ -37,5 +37,6 @@ public class DeviceMAC extends ValidavelAbs implements Validavel {
     public Boolean validar(EfikaCustomer cust) {
         return !mac.isEmpty();
     }
+
 
 }

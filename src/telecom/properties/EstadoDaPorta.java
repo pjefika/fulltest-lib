@@ -17,7 +17,7 @@ public class EstadoDaPorta extends ValidavelAbs implements Validavel {
 
     private Boolean operState;
 
-    private static final String NOME = "Estado da Porta";
+    private static final TelecomPropertiesEnum NOME = TelecomPropertiesEnum.EstadoDaPorta;
 
     public EstadoDaPorta() {
         super(NOME);
@@ -27,8 +27,6 @@ public class EstadoDaPorta extends ValidavelAbs implements Validavel {
         super(NOME);
         this.adminState = adminState;
     }
-    
-    
 
     public Boolean getAdminState() {
         return adminState;
@@ -50,8 +48,6 @@ public class EstadoDaPorta extends ValidavelAbs implements Validavel {
     public String toString() {
         return adminState == true ? "up" : "down";
     }
-    
-    
 
     @Override
     public Boolean validar(EfikaCustomer e) {

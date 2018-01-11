@@ -19,13 +19,13 @@ public class VlanMulticast extends VlanAbstract {
         super(null, null);
     }
 
-    @Override
-    public String getNome() {
-        return "Vlan Multicast";
-    }
+//    @Override
+//    public String getNome() {
+//        return TelecomPropertiesEnum.VlanMulticast.getNome();
+//    }
 
     public VlanMulticast(Integer cvlan, Integer svlan, EnumEstadoVlan estado) {
-        super(cvlan, svlan, estado);
+        super(cvlan, svlan, estado, TelecomPropertiesEnum.VlanMulticast);
     }
 
     public String getIpIgmp() {

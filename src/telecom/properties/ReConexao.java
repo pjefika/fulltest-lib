@@ -11,18 +11,16 @@ import java.math.BigInteger;
 public class ReConexao extends ValidavelAbs implements Validavel {
 
     private BigInteger reconnects;
-    
-    private static final String NOME = "Reconexões";
+
+    private static final TelecomPropertiesEnum NOME = TelecomPropertiesEnum.ReConexao;
 
     public ReConexao() {
         super(NOME);
     }
 
-   
     @Override
     public Boolean validar(EfikaCustomer cust) {
         return reconnects.compareTo(new BigInteger("3")) <= 0;
     }
-
 
 }

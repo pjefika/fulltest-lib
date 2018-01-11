@@ -6,6 +6,7 @@
 package telecom.properties.gpon;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
+import telecom.properties.TelecomPropertiesEnum;
 import telecom.properties.Validavel;
 import telecom.properties.ValidavelAbs;
 
@@ -20,7 +21,7 @@ public class TabelaParametrosGpon extends ValidavelAbs implements Validavel {
     private Double potOlt;
 
     public TabelaParametrosGpon() {
-        super("Parâmetros Ópticos");
+        super(TelecomPropertiesEnum.TabelaParametrosGpon);
     }
 
     public Double getPotOnt() {

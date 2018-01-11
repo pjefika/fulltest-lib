@@ -7,6 +7,7 @@ package telecom.properties.metalico;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
 import java.math.BigInteger;
+import telecom.properties.TelecomPropertiesEnum;
 import telecom.properties.Validavel;
 import telecom.properties.ValidavelAbs;
 
@@ -15,7 +16,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
     private BigInteger pctDown, pctUp, crcDown, crcUp, fecDown, fecUp, resync, tempoMedicao;
 
     public TabelaRedeMetalico(String nome) {
-        super("Confiabilidade de Rede");
+        super(TelecomPropertiesEnum.TabelaRedeMetalico);
     }
 
     /**

@@ -20,7 +20,7 @@ public class Profile extends ValidavelAbs implements Validavel {
 
     private Velocidades down, up;
 
-    private static final String NOME = "Profile";
+    private static final TelecomPropertiesEnum NOME = TelecomPropertiesEnum.Profile;
 
     public Profile() {
         super(NOME);
