@@ -10,8 +10,6 @@ import telecom.velocidade.Velocidades;
 
 public class ProfileMetalico extends Profile {
 
-    public ProfileMetalico() {
-    }
 
     @Override
     public Boolean validar(EfikaCustomer ec) {

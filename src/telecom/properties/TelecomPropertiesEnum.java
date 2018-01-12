@@ -6,6 +6,7 @@
 package telecom.properties;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
@@ -31,7 +32,8 @@ public enum TelecomPropertiesEnum {
     TabelaParametrosGpon("Parâmetros Ópticos"),
     Modulacao("Modulação"),
     TabelaParametrosMetalico("Parâmetros"),
-    TabelaRedeMetalico("Confiabilidade de Rede");
+    TabelaRedeMetalico("Confiabilidade de Rede"),
+    ValidavelFake("Propriedade não validada.");
 
     private final String valor;
 
@@ -39,7 +41,6 @@ public enum TelecomPropertiesEnum {
         valor = nome;
     }
 
-//    @JsonValue
     public String getNome() {
         return valor;
     }
