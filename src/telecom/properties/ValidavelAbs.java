@@ -25,33 +25,33 @@ import telecom.properties.metalico.TabelaRedeMetalico;
 //        visible = true,
         defaultImpl = ValidacaoFake.class)
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = DeviceMAC.class, name = "MAC do Equipamento")
+    @JsonSubTypes.Type(value = DeviceMAC.class)
     , 
-    @JsonSubTypes.Type(value = EstadoDaPorta.class, name = "telecom.properties.EstadoDaPorta")
+    @JsonSubTypes.Type(value = EstadoDaPorta.class)
     , 
-    @JsonSubTypes.Type(value = Profile.class, name = "Profile")
+    @JsonSubTypes.Type(value = Profile.class)
     , 
-    @JsonSubTypes.Type(value = ReConexao.class, name = "Reconexões")
+    @JsonSubTypes.Type(value = ReConexao.class)
     , 
-    @JsonSubTypes.Type(value = VlanBanda.class, name = "Vlan Banda Larga")
+    @JsonSubTypes.Type(value = VlanBanda.class)
     , 
-    @JsonSubTypes.Type(value = VlanMulticast.class, name = "Vlan Multicast")
+    @JsonSubTypes.Type(value = VlanMulticast.class)
     , 
-    @JsonSubTypes.Type(value = VlanVod.class, name = "Vlan VoD/IPTV")
+    @JsonSubTypes.Type(value = VlanVod.class)
     , 
-    @JsonSubTypes.Type(value = VlanVoip.class, name = "Vlan VoIP")
+    @JsonSubTypes.Type(value = VlanVoip.class)
     , 
-    @JsonSubTypes.Type(value = AlarmesGpon.class, name = "Lista de Alarmes")
+    @JsonSubTypes.Type(value = AlarmesGpon.class)
     , 
-    @JsonSubTypes.Type(value = SerialOntGpon.class, name = "Associação Serial ONT")
+    @JsonSubTypes.Type(value = SerialOntGpon.class)
     , 
-    @JsonSubTypes.Type(value = TabelaParametrosGpon.class, name = "Parâmetros Ópticos")
+    @JsonSubTypes.Type(value = TabelaParametrosGpon.class)
     , 
-    @JsonSubTypes.Type(value = Modulacao.class, name = "Modulação")
+    @JsonSubTypes.Type(value = Modulacao.class)
     , 
-    @JsonSubTypes.Type(value = TabelaParametrosMetalico.class, name = "Parâmetros")
+    @JsonSubTypes.Type(value = TabelaParametrosMetalico.class)
     , 
-    @JsonSubTypes.Type(value = TabelaRedeMetalico.class, name = "Confiabilidade de Rede")
+    @JsonSubTypes.Type(value = TabelaRedeMetalico.class)
 })
 public abstract class ValidavelAbs {
 
