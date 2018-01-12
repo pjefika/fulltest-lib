@@ -22,8 +22,8 @@ public abstract class VlanAbstract extends ValidavelAbs implements Validavel {
 
     private EnumEstadoVlan state;
 
-    public VlanAbstract(TelecomPropertiesEnum nome) {
-        super(nome);
+    public VlanAbstract() {
+        super(null);
     }
     
 
