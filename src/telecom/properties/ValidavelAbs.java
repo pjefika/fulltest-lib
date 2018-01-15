@@ -22,7 +22,7 @@ import telecom.properties.metalico.TabelaRedeMetalico;
         use = JsonTypeInfo.Id.CLASS,
         property = "type",
         include = JsonTypeInfo.As.EXISTING_PROPERTY,
-//        visible = true,
+        //        visible = true,
         defaultImpl = ValidacaoFake.class)
 @JsonSubTypes({
     @JsonSubTypes.Type(value = DeviceMAC.class)
@@ -52,6 +52,8 @@ import telecom.properties.metalico.TabelaRedeMetalico;
     @JsonSubTypes.Type(value = TabelaParametrosMetalico.class)
     , 
     @JsonSubTypes.Type(value = TabelaRedeMetalico.class)
+    ,
+    @JsonSubTypes.Type(value = ValidacaoFake.class),
 })
 public abstract class ValidavelAbs {
 
