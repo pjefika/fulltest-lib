@@ -6,11 +6,10 @@
 package telecom.properties;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
-import java.math.BigInteger;
 
 public class ReConexao extends ValidavelAbs implements Validavel {
 
-    private BigInteger reconnects;
+    private Integer reconnects;
 
     private static final TelecomPropertiesEnum NOME = TelecomPropertiesEnum.ReConexao;
 
@@ -18,21 +17,21 @@ public class ReConexao extends ValidavelAbs implements Validavel {
         super(NOME);
     }
 
-    public ReConexao(BigInteger reconnects) {
+    public ReConexao(Integer reconnects) {
         super(NOME);
         this.reconnects = reconnects;
     }
 
     @Override
     public Boolean validar(EfikaCustomer cust) {
-        return reconnects.compareTo(new BigInteger("3")) <= 0;
+        return reconnects.compareTo(new Integer("3")) <= 0;
     }
 
-    public BigInteger getReconnects() {
+    public Integer getReconnects() {
         return reconnects;
     }
 
-    public void setReconnects(BigInteger reconnects) {
+    public void setReconnects(Integer reconnects) {
         this.reconnects = reconnects;
     }
 

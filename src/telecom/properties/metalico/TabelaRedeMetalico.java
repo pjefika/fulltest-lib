@@ -6,17 +6,16 @@
 package telecom.properties.metalico;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
-import java.math.BigInteger;
 import telecom.properties.TelecomPropertiesEnum;
 import telecom.properties.Validavel;
 import telecom.properties.ValidavelAbs;
 
 public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
 
-    private BigInteger pctDown, pctUp, crcDown, crcUp, fecDown, fecUp, resync, tempoMedicao;
+    private Integer pctDown, pctUp, crcDown, crcUp, fecDown, fecUp, resync, tempoMedicao;
 
     private Boolean crcOk, pctSuficiente;
-    
+
     public TabelaRedeMetalico() {
         super(TelecomPropertiesEnum.TabelaRedeMetalico);
     }
@@ -36,73 +35,73 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
         return false;
     }
 
-    public BigInteger getResync() {
+    public Integer getResync() {
         return resync;
     }
 
-    public void setResync(BigInteger resync) {
+    public void setResync(Integer resync) {
         this.resync = resync;
     }
 
-    public BigInteger getPctDown() {
+    public Integer getPctDown() {
         return pctDown;
     }
 
-    public void setPctDown(BigInteger pctDown) {
+    public void setPctDown(Integer pctDown) {
         this.pctDown = pctDown;
     }
 
-    public BigInteger getPctUp() {
+    public Integer getPctUp() {
         return pctUp;
     }
 
-    public void setPctUp(BigInteger pctUp) {
+    public void setPctUp(Integer pctUp) {
         this.pctUp = pctUp;
     }
 
-    public BigInteger getCrcDown() {
+    public Integer getCrcDown() {
         return crcDown;
     }
 
-    public void setCrcDown(BigInteger crcDown) {
+    public void setCrcDown(Integer crcDown) {
         this.crcDown = crcDown;
     }
 
-    public BigInteger getCrcUp() {
+    public Integer getCrcUp() {
         return crcUp;
     }
 
-    public void setCrcUp(BigInteger crcUp) {
+    public void setCrcUp(Integer crcUp) {
         this.crcUp = crcUp;
     }
 
-    public BigInteger getFecDown() {
+    public Integer getFecDown() {
         return fecDown;
     }
 
-    public void setFecDown(BigInteger fecDown) {
+    public void setFecDown(Integer fecDown) {
         this.fecDown = fecDown;
     }
 
-    public BigInteger getFecUp() {
+    public Integer getFecUp() {
         return fecUp;
     }
 
-    public void setFecUp(BigInteger fecUp) {
+    public void setFecUp(Integer fecUp) {
         this.fecUp = fecUp;
     }
 
-    public BigInteger getTempoMedicao() {
+    public Integer getTempoMedicao() {
         return tempoMedicao;
     }
 
-    public void setTempoMedicao(BigInteger time) {
+    public void setTempoMedicao(Integer time) {
         this.tempoMedicao = time;
     }
 
     public Boolean isCrcOk() {
-        BigInteger maxCrcDown = this.getPctDown().divide(new BigInteger("6000"));
-        BigInteger maxCrcUp = this.getPctUp().divide(new BigInteger("5000"));
+        Integer maxCrcDown = this.getPctDown() / new Integer("6000");
+        Integer maxCrcUp = this.getPctUp() / new Integer("5000");
         if (this.getCrcDown().compareTo(maxCrcDown) > 0 || this.getCrcUp().compareTo(maxCrcUp) > 0) {
             return false;
         }
@@ -115,7 +114,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean resync300() {
-        return this.getResync().compareTo(new BigInteger("300")) < 0;
+        return this.getResync().compareTo(new Integer("300")) < 0;
     }
 
     /**
@@ -124,7 +123,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean cincoMin() {
-        return this.getTempoMedicao().compareTo(BigInteger.valueOf(300l)) > 0;
+        return this.getTempoMedicao().compareTo(300) > 0;
     }
 
     /**
@@ -133,7 +132,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean resync50() {
-        return this.getResync().compareTo(new BigInteger("50")) < 0;
+        return this.getResync().compareTo(new Integer("50")) < 0;
     }
 
     /**
@@ -142,7 +141,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean resync5() {
-        return this.getResync().compareTo(new BigInteger("5")) < 0;
+        return this.getResync().compareTo(new Integer("5")) < 0;
     }
 
     /**
@@ -151,7 +150,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean resync0() {
-        return this.getResync().compareTo(new BigInteger("0")) == 0;
+        return this.getResync().compareTo(new Integer("0")) == 0;
     }
 
     /**
@@ -160,7 +159,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean pctA() {
-        return this.getPctDown().compareTo(new BigInteger("50")) < 0 && this.getPctUp().compareTo(new BigInteger("50")) < 0;
+        return this.getPctDown().compareTo(new Integer("50")) < 0 && this.getPctUp().compareTo(new Integer("50")) < 0;
     }
 
     /**
@@ -169,7 +168,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean pctDown() {
-        return this.getPctDown().compareTo(new BigInteger("6000")) >= 0;
+        return this.getPctDown().compareTo(new Integer("6000")) >= 0;
     }
 
     /**
@@ -178,7 +177,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean pctUp() {
-        return this.getPctDown().compareTo(new BigInteger("5000")) >= 0;
+        return this.getPctDown().compareTo(new Integer("5000")) >= 0;
     }
 
     /**
@@ -196,7 +195,7 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean pctB() {
-        return this.getPctDown().compareTo(new BigInteger("3000")) > 0 && this.getPctUp().compareTo(new BigInteger("3000")) > 0;
+        return this.getPctDown().compareTo(new Integer("3000")) > 0 && this.getPctUp().compareTo(new Integer("3000")) > 0;
     }
 
     /**
@@ -205,6 +204,6 @@ public class TabelaRedeMetalico extends ValidavelAbs implements Validavel {
      * @return
      */
     public Boolean pctC() {
-        return this.getPctDown().compareTo(new BigInteger("1000")) < 0 && this.getPctUp().compareTo(new BigInteger("1000")) < 0;
+        return this.getPctDown().compareTo(new Integer("1000")) < 0 && this.getPctUp().compareTo(new Integer("1000")) < 0;
     }
 }

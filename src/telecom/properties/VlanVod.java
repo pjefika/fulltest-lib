@@ -31,13 +31,7 @@ public class VlanVod extends VlanAbstract {
         if (getCvlan() == null || getSvlan() == null) {
             return false;
         }
-//        if (getPctDown() != null && getPctUp() != null) {
-//            return this.getSvlan().equals(e.getRede().getVlanVod()) && this.getCvlan().equals(e.getRede().getCvlan())
-//                    && this.getState().equals(EnumEstadoVlan.UP) 
-////                    && this.getPctDown().compareTo(BigInteger.ZERO) > 0
-////                    && this.getPctUp().compareTo(BigInteger.ZERO) > 0
-//                    ;
-//        }
+
         return this.getSvlan().equals(e.getRede().getVlanVod()) && this.getCvlan().equals(e.getRede().getCvlan())
                 && this.getState().equals(EnumEstadoVlan.UP);
     }

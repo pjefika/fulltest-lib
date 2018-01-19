@@ -6,7 +6,6 @@
 package telecom.properties;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
-import java.math.BigInteger;
 
 /**
  *
@@ -18,7 +17,7 @@ public abstract class VlanAbstract extends ValidavelAbs implements Validavel {
 
     private Integer svlan;
 
-    private BigInteger pctDown, pctUp;
+    private Integer pctDown, pctUp;
 
     private EnumEstadoVlan state;
 
@@ -66,19 +65,19 @@ public abstract class VlanAbstract extends ValidavelAbs implements Validavel {
         this.svlan = svlan;
     }
 
-    public BigInteger getPctDown() {
+    public Integer getPctDown() {
         return pctDown;
     }
 
-    public void setPctDown(BigInteger pctDown) {
+    public void setPctDown(Integer pctDown) {
         this.pctDown = pctDown;
     }
 
-    public BigInteger getPctUp() {
+    public Integer getPctUp() {
         return pctUp;
     }
 
-    public void setPctUp(BigInteger pctUp) {
+    public void setPctUp(Integer pctUp) {
         this.pctUp = pctUp;
     }
 
