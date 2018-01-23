@@ -14,7 +14,7 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 public class VlanVod extends VlanAbstract {
 
     public VlanVod() {
-        super(null, null, null, TelecomPropertiesEnum.VlanVoip);
+        super(null, null, null, TelecomPropertiesEnum.VlanVod);
     }
 
 //    @Override
