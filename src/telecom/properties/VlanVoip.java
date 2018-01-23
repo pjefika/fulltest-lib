@@ -14,22 +14,20 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 public class VlanVoip extends VlanAbstract {
 
     public VlanVoip() {
-        super(null, null);
+        super(null, null, null, TelecomPropertiesEnum.VlanVoip);
     }
 
 //    @Override
 //    public String getNome() {
 //        return TelecomPropertiesEnum.VlanVoip.getNome();
 //    }
-
     public VlanVoip(Integer cvlan, Integer svlan, EnumEstadoVlan est) {
         super(cvlan, svlan, est, TelecomPropertiesEnum.VlanVoip);
     }
 
-
     @Override
     public Boolean validar(EfikaCustomer e) {
-        if(getCvlan()==null || getSvlan() == null){
+        if (getCvlan() == null || getSvlan() == null) {
             return false;
         }
         return this.getSvlan().equals(e.getRede().getVlanVoip()) && this.getCvlan().equals(e.getRede().getCvlan()) && this.getState().equals(EnumEstadoVlan.UP);

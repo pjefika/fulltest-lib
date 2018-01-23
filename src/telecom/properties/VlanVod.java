@@ -14,14 +14,13 @@ import br.net.gvt.efika.customer.EfikaCustomer;
 public class VlanVod extends VlanAbstract {
 
     public VlanVod() {
-        super(null, null);
+        super(null, null, null, TelecomPropertiesEnum.VlanVoip);
     }
 
 //    @Override
 //    public String getNome() {
 //        return TelecomPropertiesEnum.VlanVod.getNome();
 //    }
-
     public VlanVod(Integer cvlan, Integer svlan, EnumEstadoVlan est) {
         super(cvlan, svlan, est, TelecomPropertiesEnum.VlanVod);
     }
