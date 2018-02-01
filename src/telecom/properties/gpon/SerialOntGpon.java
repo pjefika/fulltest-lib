@@ -23,6 +23,11 @@ public class SerialOntGpon extends ValidavelAbs implements Validavel {
         super(TelecomPropertiesEnum.SerialOntGpon);
     }
 
+    public SerialOntGpon(String serial) {
+        super(TelecomPropertiesEnum.SerialOntGpon);
+        this.serial = serial;
+    }
+
     public String getSlot() {
         return slot;
     }
@@ -67,5 +72,4 @@ public class SerialOntGpon extends ValidavelAbs implements Validavel {
 //    public String getNome() {
 //        return "Associação Serial ONT";
 //    }
-
 }
