@@ -17,7 +17,9 @@ import telecom.properties.ValidavelAbs;
  */
 public class SerialOntGpon extends ValidavelAbs implements Validavel {
 
-    private String serial, slot, porta, idOnt;
+    private String serial, idOnt;
+
+    private Integer slot, porta;
 
     public SerialOntGpon() {
         super(TelecomPropertiesEnum.SerialOntGpon);
@@ -28,19 +30,19 @@ public class SerialOntGpon extends ValidavelAbs implements Validavel {
         this.serial = serial;
     }
 
-    public String getSlot() {
+    public Integer getSlot() {
         return slot;
     }
 
-    public void setSlot(String slot) {
+    public void setSlot(Integer slot) {
         this.slot = slot;
     }
 
-    public String getPorta() {
+    public Integer getPorta() {
         return porta;
     }
 
-    public void setPorta(String porta) {
+    public void setPorta(Integer porta) {
         this.porta = porta;
     }
 
