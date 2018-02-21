@@ -5,8 +5,8 @@
  */
 package br.net.gvt.efika.telecom.properties.gpon;
 
-import br.net.gvt.efika.customer.model.customer.EfikaCustomer;
-import br.net.gvt.efika.customer.model.customer.enums.OrigemPlanta;
+import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
+import br.net.gvt.efika.efika_customer.model.customer.enums.OrigemPlanta;
 import br.net.gvt.efika.telecom.properties.TelecomPropertiesEnum;
 import br.net.gvt.efika.telecom.properties.Validavel;
 import br.net.gvt.efika.telecom.properties.ValidavelAbs;

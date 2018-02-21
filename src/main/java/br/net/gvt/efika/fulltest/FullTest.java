@@ -5,7 +5,7 @@
  */
 package br.net.gvt.efika.fulltest;
 
-import br.net.gvt.efika.customer.model.customer.EfikaCustomer;
+import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
 import java.util.ArrayList;
 import java.util.List;
 

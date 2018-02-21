@@ -5,7 +5,7 @@
  */
 package br.net.gvt.efika.telecom.properties.gpon;
 
-import br.net.gvt.efika.customer.model.customer.EfikaCustomer;
+import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
 import br.net.gvt.efika.telecom.properties.EstadoDaPorta;
 
 public class PortaPON extends EstadoDaPorta {
