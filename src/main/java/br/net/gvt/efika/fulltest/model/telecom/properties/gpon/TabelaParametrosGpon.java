@@ -6,30 +6,17 @@
 package br.net.gvt.efika.fulltest.model.telecom.properties.gpon;
 
 import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
-import br.net.gvt.efika.fulltest.model.telecom.properties.TelecomPropertiesEnum;
 import br.net.gvt.efika.fulltest.model.telecom.properties.Validavel;
-import br.net.gvt.efika.fulltest.model.telecom.properties.ValidavelAbs;
 
 /**
  *
  * @author G0042204
  */
-public class TabelaParametrosGpon extends ValidavelAbs implements Validavel {
-
-    private Double potOnt;
+public class TabelaParametrosGpon extends TabelaParametrosGponBasic implements Validavel {
 
     private Double potOlt;
 
     public TabelaParametrosGpon() {
-        super(TelecomPropertiesEnum.TabelaParametrosGpon);
-    }
-
-    public Double getPotOnt() {
-        return potOnt;
-    }
-
-    public void setPotOnt(Double potOnt) {
-        this.potOnt = potOnt;
     }
 
     public Double getPotOlt() {
@@ -42,8 +29,8 @@ public class TabelaParametrosGpon extends ValidavelAbs implements Validavel {
 
     @Override
     public Boolean validar(EfikaCustomer e) {
-        return this.getPotOlt().compareTo(new Double("-8")) <= 0 && this.getPotOlt().compareTo(new Double("-28")) >= 0
-                && this.getPotOnt().compareTo(new Double("-8")) <= 0 && this.getPotOnt().compareTo(new Double("-28")) >= 0;
+        return super.validar(e)
+                && this.getPotOlt().compareTo(new Double("-8")) <= 0 && this.getPotOlt().compareTo(new Double("-28")) >= 0;
     }
 
 }
