@@ -33,6 +33,7 @@ public enum Velocidades {
     VEL_3245("3"),
     VEL_3072("3"),
     VEL_4326("4"),
+    VEL_4096("4"),
     VEL_5120("5"),
     VEL_5407("5"),
     VEL_6489("6"),
