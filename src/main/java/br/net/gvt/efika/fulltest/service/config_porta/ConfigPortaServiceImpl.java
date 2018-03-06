@@ -11,7 +11,6 @@ import br.net.gvt.efika.fulltest.model.fulltest.ValidacaoResult;
 import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.SerialOntGpon;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigPortaServiceImpl implements ConfigPortaService {
@@ -24,7 +23,7 @@ public class ConfigPortaServiceImpl implements ConfigPortaService {
 
     @Override
     public List<SerialOntGpon> ontsDisponiveis(FulltestRequest request) throws Exception {
-        FactoryHttpDAOAbstract<? extends ArrayList> fac = new FactoryHttpDAOAbstract<>(new ArrayList<SerialOntGpon>().getClass());
+        FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
         return (List<SerialOntGpon>) fac.createWithoutProxy().post(Urls.ONTS_DISP.getUrl(), request);
 
     }
