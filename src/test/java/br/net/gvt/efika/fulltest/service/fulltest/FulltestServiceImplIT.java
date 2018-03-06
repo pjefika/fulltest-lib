@@ -5,7 +5,6 @@
  */
 package br.net.gvt.efika.fulltest.service.fulltest;
 
-import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
 import br.net.gvt.efika.efika_customer.model.customer.mock.CustomerMock;
 import br.net.gvt.efika.fulltest.model.fulltest.FullTest;
 import br.net.gvt.efika.fulltest.model.fulltest.FulltestRequest;
