@@ -21,9 +21,9 @@ import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaRedeMet
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.CLASS,
         property = "type",
-        include = JsonTypeInfo.As.EXISTING_PROPERTY,
+        include = JsonTypeInfo.As.EXISTING_PROPERTY
         //        visible = true,
-        defaultImpl = ValidacaoFake.class)
+        )
 @JsonSubTypes({
     @JsonSubTypes.Type(value = DeviceMAC.class)
     , 
