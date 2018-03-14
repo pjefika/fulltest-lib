@@ -30,7 +30,7 @@ public class TabelaParametrosGpon extends TabelaParametrosGponBasic implements V
     @Override
     public Boolean validar(EfikaCustomer e) {
         return super.validar(e)
-                && this.getPotOlt().compareTo(new Double("-8")) <= 0 && this.getPotOlt().compareTo(new Double("-28")) >= 0;
+                && this.getPotOlt().compareTo(new Double("-8")) <= 0 && this.getPotOlt().compareTo(new Double("-26")) >= 0;
     }
 
 }

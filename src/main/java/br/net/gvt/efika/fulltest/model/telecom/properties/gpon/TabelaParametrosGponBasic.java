@@ -32,7 +32,7 @@ public class TabelaParametrosGponBasic extends ValidavelAbs implements Validavel
 
     @Override
     public Boolean validar(EfikaCustomer e) {
-        return this.getPotOnt().compareTo(new Double("-8")) <= 0 && this.getPotOnt().compareTo(new Double("-28")) >= 0;
+        return this.getPotOnt().compareTo(new Double("-8")) <= 0 && this.getPotOnt().compareTo(new Double("-26")) >= 0;
     }
 
 }
