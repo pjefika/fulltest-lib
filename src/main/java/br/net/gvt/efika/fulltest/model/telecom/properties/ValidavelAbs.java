@@ -96,8 +96,8 @@ public abstract class ValidavelAbs {
         this.interacoes = interacoes;
     }
 
-    public void addInteracao(ComandoDslam interacoes) {
-        getInteracoes().add(interacoes);
+    public void addInteracao(ComandoDslam cmd) {
+        getInteracoes().add(cmd);
     }
 
 }
