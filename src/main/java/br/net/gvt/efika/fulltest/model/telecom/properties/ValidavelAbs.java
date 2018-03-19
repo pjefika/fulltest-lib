@@ -55,7 +55,7 @@ import java.util.List;
     , 
     @JsonSubTypes.Type(value = TabelaRedeMetalico.class)
     ,
-    @JsonSubTypes.Type(value = ValidacaoFake.class),})
+    @JsonSubTypes.Type(value = ValidacaoFake.class)})
 public abstract class ValidavelAbs {
 
     private TelecomPropertiesEnum nome;
