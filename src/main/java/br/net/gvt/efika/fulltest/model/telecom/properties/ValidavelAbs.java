@@ -5,6 +5,7 @@
  */
 package br.net.gvt.efika.fulltest.model.telecom.properties;
 
+import br.net.gvt.efika.fulltest.model.telecom.config.ComandoDslam;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.AlarmesGpon;
@@ -13,6 +14,7 @@ import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.TabelaParametrosG
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.Modulacao;
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaParametrosMetalico;
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaRedeMetalico;
+import java.util.List;
 
 /**
  *
@@ -22,8 +24,8 @@ import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaRedeMet
         use = JsonTypeInfo.Id.CLASS,
         property = "type",
         include = JsonTypeInfo.As.EXISTING_PROPERTY
-        //        visible = true,
-        )
+//        visible = true,
+)
 @JsonSubTypes({
     @JsonSubTypes.Type(value = DeviceMAC.class)
     , 
@@ -53,13 +55,14 @@ import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaRedeMet
     , 
     @JsonSubTypes.Type(value = TabelaRedeMetalico.class)
     ,
-    @JsonSubTypes.Type(value = ValidacaoFake.class),
-})
+    @JsonSubTypes.Type(value = ValidacaoFake.class),})
 public abstract class ValidavelAbs {
 
     private TelecomPropertiesEnum nome;
 
     private String type;
+
+    private List<ComandoDslam> interacoes;
 
     public ValidavelAbs(TelecomPropertiesEnum nome) {
         this.nome = nome;
@@ -79,6 +82,14 @@ public abstract class ValidavelAbs {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public List<ComandoDslam> getInteracoes() {
+        return interacoes;
+    }
+
+    public void setInteracoes(List<ComandoDslam> interacoes) {
+        this.interacoes = interacoes;
     }
 
 }

@@ -23,6 +23,8 @@ public class ValidacaoResult {
 
     private ValidavelAbs result;
 
+    private ValidavelAbs preresult;
+
     public ValidacaoResult() {
     }
 
@@ -39,6 +41,15 @@ public class ValidacaoResult {
         this.resultado = resultado;
         this.result = result;
         this.foiCorrigido = foiCorrigido;
+    }
+
+    public ValidacaoResult(String nome, String mensagem, Boolean resultado, ValidavelAbs result, Boolean foiCorrigido, ValidavelAbs preresult) {
+        this.nome = nome;
+        this.mensagem = mensagem;
+        this.resultado = resultado;
+        this.result = result;
+        this.foiCorrigido = foiCorrigido;
+        this.preresult = preresult;
     }
 
     public String getNome() {
@@ -79,6 +90,14 @@ public class ValidacaoResult {
 
     public void setFoiCorrigido(Boolean foiCorrigido) {
         this.foiCorrigido = foiCorrigido;
+    }
+
+    public ValidavelAbs getPreresult() {
+        return preresult;
+    }
+
+    public void setPreresult(ValidavelAbs preresult) {
+        this.preresult = preresult;
     }
 
 }
