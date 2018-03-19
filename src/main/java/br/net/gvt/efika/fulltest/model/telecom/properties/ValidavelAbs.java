@@ -14,6 +14,7 @@ import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.TabelaParametrosG
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.Modulacao;
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaParametrosMetalico;
 import br.net.gvt.efika.fulltest.model.telecom.properties.metalico.TabelaRedeMetalico;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -85,11 +86,18 @@ public abstract class ValidavelAbs {
     }
 
     public List<ComandoDslam> getInteracoes() {
+        if (interacoes == null) {
+            interacoes = new ArrayList<>();
+        }
         return interacoes;
     }
 
     public void setInteracoes(List<ComandoDslam> interacoes) {
         this.interacoes = interacoes;
+    }
+
+    public void addInteracao(ComandoDslam interacoes) {
+        getInteracoes().add(interacoes);
     }
 
 }
