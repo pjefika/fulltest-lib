@@ -6,6 +6,7 @@
 package br.net.gvt.efika.fulltest.model.fulltest;
 
 import br.net.gvt.efika.fulltest.model.telecom.properties.ValidavelAbs;
+import java.util.List;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ValidacaoResult {
 
     private ValidavelAbs result;
 
-    private ValidavelAbs preresult;
+    private List<ValidavelAbs> preresults;
 
     public ValidacaoResult() {
     }
@@ -43,13 +44,13 @@ public class ValidacaoResult {
         this.foiCorrigido = foiCorrigido;
     }
 
-    public ValidacaoResult(String nome, String mensagem, Boolean resultado, ValidavelAbs result, Boolean foiCorrigido, ValidavelAbs preresult) {
+    public ValidacaoResult(String nome, String mensagem, Boolean resultado, ValidavelAbs result, Boolean foiCorrigido, List<ValidavelAbs> preresults) {
         this.nome = nome;
         this.mensagem = mensagem;
         this.resultado = resultado;
         this.result = result;
         this.foiCorrigido = foiCorrigido;
-        this.preresult = preresult;
+        this.preresults = preresults;
     }
 
     public String getNome() {
@@ -92,12 +93,12 @@ public class ValidacaoResult {
         this.foiCorrigido = foiCorrigido;
     }
 
-    public ValidavelAbs getPreresult() {
-        return preresult;
+    public List<ValidavelAbs> getPreresult() {
+        return preresults;
     }
 
-    public void setPreresult(ValidavelAbs preresult) {
-        this.preresult = preresult;
+    public void setPreresult(List<ValidavelAbs> preresults) {
+        this.preresults = preresults;
     }
 
 }
