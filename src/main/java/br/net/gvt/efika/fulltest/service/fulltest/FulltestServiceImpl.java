@@ -14,7 +14,7 @@ public class FulltestServiceImpl implements FulltestService {
 
     @Override
     public FullTest fulltest(FulltestRequest request) throws Exception {
-        FactoryHttpDAOAbstract<FullTest> fac = new FactoryHttpDAOAbstract<>(FullTest.class);
+        FactoryHttpDAOAbstract<FullTest> fac = new FactoryHttpDAOAbstract(FullTest.class);
         return (FullTest) fac.createWithoutProxy().post(Urls.FULLTEST.getUrl(),
                 new FulltestRequest(request.getCust(), request.getExecutor()));
     }

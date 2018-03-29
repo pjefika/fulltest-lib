@@ -5,6 +5,7 @@
  */
 package br.net.gvt.efika.fulltest.model.telecom.config;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 /**
@@ -23,11 +24,13 @@ public class ComandoDslam {
 
     private String sintaxAux2;
 
-    private String resposta;
-
+//    private String resposta;
     private List<String> retorno;
 
     private Boolean hasRetorno;
+
+    public ComandoDslam() {
+    }
 
     public ComandoDslam(String sintax) {
         this.sintax = sintax;
@@ -71,6 +74,7 @@ public class ComandoDslam {
         return retorno;
     }
 
+    @JsonIgnore
     public String getBlob() {
         StringBuilder resp = new StringBuilder();
         for (String string : retorno) {
