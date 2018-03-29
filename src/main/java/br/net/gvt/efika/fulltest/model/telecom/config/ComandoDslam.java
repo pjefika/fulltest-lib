@@ -25,10 +25,12 @@ public class ComandoDslam {
     private String sintaxAux2;
 
 //    private String resposta;
-
     private List<String> retorno;
 
     private Boolean hasRetorno;
+
+    public ComandoDslam() {
+    }
 
     public ComandoDslam(String sintax) {
         this.sintax = sintax;
