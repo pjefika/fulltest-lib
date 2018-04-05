@@ -65,7 +65,7 @@ public class SerialOntGpon extends ValidavelAbs implements Validavel {
     @Override
     public Boolean validar(EfikaCustomer e) {
         if (e.getRede().getPlanta() == OrigemPlanta.VIVO1) {
-            return (!this.serial.isEmpty()) && this.idOnt.equalsIgnoreCase(e.getRede().getIdOnt());
+            return this.idOnt.equalsIgnoreCase(e.getRede().getIdOnt());
         }
         return !this.serial.isEmpty();
     }
