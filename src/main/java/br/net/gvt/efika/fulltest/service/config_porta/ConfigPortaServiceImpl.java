@@ -8,6 +8,7 @@ package br.net.gvt.efika.fulltest.service.config_porta;
 import br.net.gvt.efika.fulltest.model.fulltest.FulltestRequest;
 import br.net.gvt.efika.fulltest.model.fulltest.SetOntToOltRequest;
 import br.net.gvt.efika.fulltest.model.fulltest.ValidacaoResult;
+import br.net.gvt.efika.fulltest.model.telecom.properties.ValidavelAbs;
 import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.SerialOntGpon;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
@@ -22,14 +23,20 @@ public class ConfigPortaServiceImpl implements ConfigPortaService {
     }
 
     @Override
-    public List<SerialOntGpon> ontsDisponiveis(FulltestRequest request) throws Exception {
+    public List<ValidavelAbs> ontsDisponiveis(FulltestRequest request) throws Exception {
         FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
-        return (List<SerialOntGpon>) fac.createWithoutProxy().post(Urls.ONTS_DISP.getUrl(), request);
+        return (List<ValidavelAbs>) fac.createWithoutProxy().post(Urls.ONTS_DISP.getUrl(), request);
 
     }
 
     @Override
     public ValidacaoResult setOntToOlt(SetOntToOltRequest request) throws Exception {
+        FactoryHttpDAOAbstract<ValidacaoResult> fac = new FactoryHttpDAOAbstract<>(ValidacaoResult.class);
+        return (ValidacaoResult) fac.createWithoutProxy().post(Urls.SET_ONT.getUrl(), request);
+    }
+
+    @Override
+    public ValidacaoResult getOntFromOlt(FulltestRequest request) throws Exception {
         FactoryHttpDAOAbstract<ValidacaoResult> fac = new FactoryHttpDAOAbstract<>(ValidacaoResult.class);
         return (ValidacaoResult) fac.createWithoutProxy().post(Urls.SET_ONT.getUrl(), request);
     }
