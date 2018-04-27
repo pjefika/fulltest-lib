@@ -9,10 +9,10 @@ package br.net.gvt.efika.fulltest.exception;
  *
  * @author G0042204
  */
-public class FalhaInventarioRedeException extends Exception {
+public class InventarioRedeIncompletoException extends Exception {
 
-    public FalhaInventarioRedeException() {
-        super("Inventário de Rede inexistente.");
+    public InventarioRedeIncompletoException() {
+        super("Inventário de Rede incompleto.");
     }
 
 }
