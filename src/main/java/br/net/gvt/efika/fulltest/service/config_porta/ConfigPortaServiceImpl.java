@@ -38,7 +38,7 @@ public class ConfigPortaServiceImpl implements ConfigPortaService {
     @Override
     public ValidacaoResult getOntFromOlt(FulltestRequest request) throws Exception {
         FactoryHttpDAOAbstract<ValidacaoResult> fac = new FactoryHttpDAOAbstract<>(ValidacaoResult.class);
-        return (ValidacaoResult) fac.createWithoutProxy().post(Urls.SET_ONT.getUrl(), request);
+        return (ValidacaoResult) fac.createWithoutProxy().post(Urls.GET_ONT.getUrl(), request);
     }
 
 }
