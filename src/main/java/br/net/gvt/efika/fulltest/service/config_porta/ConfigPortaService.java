@@ -26,6 +26,8 @@ public interface ConfigPortaService {
 
     public ValidacaoResult getOntFromOlt(FulltestRequest request) throws Exception;
 
+    public ValidacaoResult corretorEstadoPorta(FulltestRequest request) throws Exception;
+
     public Boolean isManageable(FulltestRequest request) throws Exception;
 
 }
