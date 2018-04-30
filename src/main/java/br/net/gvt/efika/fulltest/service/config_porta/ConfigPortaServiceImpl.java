@@ -40,4 +40,10 @@ public class ConfigPortaServiceImpl implements ConfigPortaService {
         return (ValidacaoResult) fac.createWithoutProxy().post(Urls.GET_ONT.getUrl(), request);
     }
 
+    @Override
+    public Boolean isManageable(FulltestRequest request) throws Exception {
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.IS_MANAGEABLE.getUrl(), request);
+    }
+
 }
