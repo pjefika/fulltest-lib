@@ -28,6 +28,8 @@ public interface ConfigPortaService {
 
     public ValidacaoResult corretorEstadoPorta(FulltestRequest request) throws Exception;
 
+    public ValidacaoResult corretorVlanBanda(FulltestRequest request) throws Exception;
+
     public Boolean isManageable(FulltestRequest request) throws Exception;
 
 }
