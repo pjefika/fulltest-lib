@@ -30,6 +30,8 @@ public interface ConfigPortaService {
 
     public ValidacaoResult corretorVlanBanda(FulltestRequest request) throws Exception;
 
+    public ValidacaoResult corretorProfile(FulltestRequest request) throws Exception;
+
     public Boolean isManageable(FulltestRequest request) throws Exception;
 
 }
