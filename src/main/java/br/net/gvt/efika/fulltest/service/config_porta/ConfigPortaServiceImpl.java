@@ -70,4 +70,10 @@ public class ConfigPortaServiceImpl implements ConfigPortaService {
         return fac.createWithoutProxy().post(Urls.CORRETOR_VLANS_VIDEO.getUrl(), request);
     }
 
+    @Override
+    public ValidacaoResult corretorVlanVoIP(FulltestRequest request) throws Exception {
+        FactoryHttpDAOAbstract<ValidacaoResult> fac = new FactoryHttpDAOAbstract<>(ValidacaoResult.class);
+        return fac.createWithoutProxy().post(Urls.CORRETOR_VLAN_VOIP.getUrl(), request);
+    }
+
 }

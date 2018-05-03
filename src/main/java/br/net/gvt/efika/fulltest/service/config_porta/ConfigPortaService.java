@@ -34,6 +34,8 @@ public interface ConfigPortaService {
 
     public ValidacaoResult corretorVlansVideo(FulltestRequest request) throws Exception;
 
+    public ValidacaoResult corretorVlanVoIP(FulltestRequest request) throws Exception;
+
     public Boolean isManageable(FulltestRequest request) throws Exception;
 
 }
