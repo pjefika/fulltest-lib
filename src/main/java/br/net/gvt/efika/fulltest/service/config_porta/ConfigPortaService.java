@@ -5,7 +5,6 @@
  */
 package br.net.gvt.efika.fulltest.service.config_porta;
 
-
 import br.net.gvt.efika.fulltest.model.fulltest.FulltestRequest;
 import br.net.gvt.efika.fulltest.model.fulltest.SetOntToOltRequest;
 import br.net.gvt.efika.fulltest.model.fulltest.ValidacaoResult;
@@ -35,6 +34,8 @@ public interface ConfigPortaService {
     public ValidacaoResult corretorVlansVideo(FulltestRequest request) throws Exception;
 
     public ValidacaoResult corretorVlanVoIP(FulltestRequest request) throws Exception;
+
+    public ValidacaoResult validadorParametros(FulltestRequest request) throws Exception;
 
     public Boolean isManageable(FulltestRequest request) throws Exception;
 
