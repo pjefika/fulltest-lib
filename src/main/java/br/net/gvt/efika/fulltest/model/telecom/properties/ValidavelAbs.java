@@ -64,6 +64,8 @@ public abstract class ValidavelAbs {
     private String type;
 
     private List<ComandoDslam> interacoes;
+    
+    
 
     public ValidavelAbs(TelecomPropertiesEnum nome) {
         this.nome = nome;

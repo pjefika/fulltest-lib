@@ -5,11 +5,13 @@
  */
 package br.net.gvt.efika.fulltest.model.telecom.properties.metalico;
 
+import java.util.List;
+
 /**
  *
  * @author G0042204
  */
-public class TabelaParametrosMetalicoVdsl extends TabelaParametrosMetalico{
+public class TabelaParametrosMetalicoVdsl extends TabelaParametrosMetalico {
 
     private Double snrDown1, snrDown2,
             snrUp1, snrUp2,
@@ -17,15 +19,36 @@ public class TabelaParametrosMetalicoVdsl extends TabelaParametrosMetalico{
             atnUp1, atnUp2;
 
     public Boolean validar(TabelaParametrosMetalicoVdsl t) {
-        return this.snrDown1 >= t.getSnrDown1()
-                && this.snrDown2 >= t.getSnrDown2()
-                && this.snrUp1 >= t.getSnrUp1()
-                && this.snrUp2 >= t.getSnrUp2()
-                && this.atnDown1 >= t.getAtnDown1()
-                && this.atnDown2 >= t.getAtnDown2()
-                && this.atnUp1 >= t.getAtnUp1()
-                && this.atnUp2 >= t.getAtnUp2()
-                && super.validar(t);
+        return invalidados(t).isEmpty();
+    }
+
+    public List<String> invalidados(TabelaParametrosMetalicoVdsl t) {
+        List<String> l = super.invalidados(t);
+        if (this.snrDown1 >= t.getSnrDown1()) {
+            l.add(" Snr Down 1 deve ser maior que " + t.getSnrDown1() + ", está em " + this.snrDown1 + ".");
+        }
+        if (this.snrDown2 >= t.getSnrDown2()) {
+            l.add(" Snr Down 2 deve ser maior que " + t.getSnrDown2() + ", está em " + this.snrDown2 + ".");
+        }
+        if (this.snrUp1 >= t.getSnrUp1()) {
+            l.add(" Snr Up 1 deve ser maior que " + t.getSnrUp1() + ", está em " + this.snrUp1 + ".");
+        }
+        if (this.snrUp2 >= t.getSnrUp2()) {
+            l.add(" Snr Up deve ser maior que " + t.getSnrUp2() + ", está em " + this.snrUp2 + ".");
+        }
+        if (this.atnDown1 >= t.getAtnDown1()) {
+            l.add(" Atn Down deve ser maior que " + t.getAtnDown1() + ", está em " + this.atnDown1 + ".");
+        }
+        if (this.atnDown2 >= t.getAtnDown2()) {
+            l.add(" Atn Up deve ser maior que " + t.getAtnDown2() + ", está em " + this.atnDown2 + ".");
+        }
+        if (this.atnUp1 >= t.getAtnUp1()) {
+            l.add(" Atn Up deve ser maior que " + t.getAtnUp1() + ", está em " + this.atnUp1 + ".");
+        }
+        if (this.atnUp2 >= t.getAtnUp2()) {
+            l.add(" Atn Up deve ser maior que " + t.getAtnUp2() + ", está em " + this.atnUp2 + ".");
+        }
+        return l;
     }
 
     public Double getSnrDown1() {
