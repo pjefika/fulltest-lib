@@ -16,12 +16,22 @@ public class TabelaParametrosGpon extends TabelaParametrosGponBasic implements V
 
     private Double potOlt;
 
-    private Double potOltMin = new Double("-26");
+    private Double potOltMin = new Double("-25");
 
     private Double potOltMax = new Double("-8");
 
     public TabelaParametrosGpon() {
         super();
+    }
+
+    @Override
+    public Double getPotOntMin() {
+        return new Double("-8");
+    }
+
+    @Override
+    public Double getPotOntMax() {
+        return new Double("-25");
     }
 
     public Double getPotOlt() {
