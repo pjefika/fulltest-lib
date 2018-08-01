@@ -16,14 +16,13 @@ public class VlanMulticast extends VlanAbstract {
     private String ipIgmp;
 
     public VlanMulticast() {
-        super(null, null);
+        super(null, null, null, TelecomPropertiesEnum.VlanMulticast);
     }
 
 //    @Override
 //    public String getNome() {
 //        return TelecomPropertiesEnum.VlanMulticast.getNome();
 //    }
-
     public VlanMulticast(Integer cvlan, Integer svlan, EnumEstadoVlan estado) {
         super(cvlan, svlan, estado, TelecomPropertiesEnum.VlanMulticast);
     }

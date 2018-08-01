@@ -1,11 +1,13 @@
 package br.net.gvt.efika.fulltest.model.telecom.properties.metalico;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author G0042204
@@ -21,12 +23,31 @@ public class TabelaParametrosMetalico extends TabelaParametrosAbstract<TabelaPar
 
     @Override
     public Boolean validar(TabelaParametrosMetalico t) {
-        return this.snrDown >= t.getSnrDown()
-                && this.snrUp >= t.getSnrUp()
-                && this.velSincDown >= t.getVelSincDown()
-                && this.velSincUp >= t.getVelSincUp()
-                && this.atnDown >= t.getAtnDown()
-                && this.atnUp >= t.getAtnUp();
+        return  invalidados(t).isEmpty();
+    }
+
+    @Override
+    public List<String> invalidados(TabelaParametrosMetalico t) {
+        List<String> l = new ArrayList<>();
+        if (this.velSincDown < t.getVelSincDown()) {
+            l.add(" Velocidade Down deve ser maior que " + t.getVelSincDown() + ", está em " + this.velSincDown + ".");
+        }
+        if (this.velSincUp < t.getVelSincUp()) {
+            l.add(" Velocidade Up deve ser maior que " + t.getVelSincUp() + ", está em " + this.velSincUp + ".");
+        }
+        if (this.snrDown < t.getSnrDown()) {
+            l.add(" Snr Down deve ser maior que " + t.getSnrDown() + ", está em " + this.snrDown + ".");
+        }
+        if (this.snrUp < t.getSnrUp()) {
+            l.add(" Snr Up deve ser maior que " + t.getSnrUp() + ", está em " + this.snrUp + ".");
+        }
+        if (this.atnDown < t.getAtnDown()) {
+            l.add(" Atn Down deve ser maior que " + t.getSnrDown() + ", está em " + this.atnDown + ".");
+        }
+        if (this.atnUp < t.getAtnUp()) {
+            l.add(" Atn Up deve ser maior que " + t.getAtnUp() + ", está em " + this.atnUp + ".");
+        }
+        return l;
     }
 
     public Boolean validarAttainableDown(TabelaParametrosMetalico t) {

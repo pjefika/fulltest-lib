@@ -16,7 +16,12 @@ public class TabelaParametrosGpon extends TabelaParametrosGponBasic implements V
 
     private Double potOlt;
 
+    private Double potOltMin = new Double("-25");
+
+    private Double potOltMax = new Double("-8");
+
     public TabelaParametrosGpon() {
+        super();
     }
 
     public Double getPotOlt() {
@@ -27,10 +32,26 @@ public class TabelaParametrosGpon extends TabelaParametrosGponBasic implements V
         this.potOlt = potOlt;
     }
 
+    public Double getPotOltMin() {
+        return potOltMin;
+    }
+
+    public void setPotOltMin(Double potOltMin) {
+        this.potOltMin = potOltMin;
+    }
+
+    public Double getPotOltMax() {
+        return potOltMax;
+    }
+
+    public void setPotOltMax(Double potOltMax) {
+        this.potOltMax = potOltMax;
+    }
+
     @Override
     public Boolean validar(EfikaCustomer e) {
         return super.validar(e)
-                && this.getPotOlt().compareTo(new Double("-8")) <= 0 && this.getPotOlt().compareTo(new Double("-26")) >= 0;
+                && this.getPotOlt().compareTo(getPotOltMax()) <= 0 && this.getPotOlt().compareTo(getPotOltMin()) >= 0;
     }
 
 }

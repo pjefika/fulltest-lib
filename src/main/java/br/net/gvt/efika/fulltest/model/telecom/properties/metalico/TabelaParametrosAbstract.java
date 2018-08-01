@@ -7,13 +7,14 @@ package br.net.gvt.efika.fulltest.model.telecom.properties.metalico;
 
 import br.net.gvt.efika.fulltest.model.telecom.properties.TelecomPropertiesEnum;
 import br.net.gvt.efika.fulltest.model.telecom.properties.ValidavelAbs;
+import java.util.List;
 
 /**
  *
  * @author G0041775
  * @param <T>
  */
-public abstract class TabelaParametrosAbstract<T> extends ValidavelAbs{
+public abstract class TabelaParametrosAbstract<T> extends ValidavelAbs {
 
     public TabelaParametrosAbstract() {
         super(TelecomPropertiesEnum.TabelaParametrosMetalico);
@@ -21,5 +22,6 @@ public abstract class TabelaParametrosAbstract<T> extends ValidavelAbs{
 
     public abstract Boolean validar(T t);
 
+    public abstract List<String> invalidados(T t);
 
 }

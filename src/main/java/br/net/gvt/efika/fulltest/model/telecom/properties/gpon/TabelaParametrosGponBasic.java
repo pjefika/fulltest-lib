@@ -18,6 +18,10 @@ public class TabelaParametrosGponBasic extends ValidavelAbs implements Validavel
 
     private Double potOnt;
 
+    private Double potOntMin = new Double("-25");
+
+    private Double potOntMax = new Double("-8");
+
     public TabelaParametrosGponBasic() {
         super(TelecomPropertiesEnum.TabelaParametrosGpon);
     }
@@ -30,9 +34,25 @@ public class TabelaParametrosGponBasic extends ValidavelAbs implements Validavel
         this.potOnt = potOnt;
     }
 
+    public Double getPotOntMin() {
+        return potOntMin;
+    }
+
+    public void setPotOntMin(Double potOntMin) {
+        this.potOntMin = potOntMin;
+    }
+
+    public Double getPotOntMax() {
+        return potOntMax;
+    }
+
+    public void setPotOntMax(Double potOntMax) {
+        this.potOntMax = potOntMax;
+    }
+
     @Override
     public Boolean validar(EfikaCustomer e) {
-        return this.getPotOnt().compareTo(new Double("-8")) <= 0 && this.getPotOnt().compareTo(new Double("-26")) >= 0;
+        return this.getPotOnt().compareTo(this.getPotOntMax()) <= 0 && this.getPotOnt().compareTo(this.getPotOntMin()) >= 0;
     }
 
 }
