@@ -18,7 +18,7 @@ public class TabelaParametrosGponBasic extends ValidavelAbs implements Validavel
 
     private Double potOnt;
 
-    private Double potOntMin = new Double("-26");
+    private Double potOntMin = new Double("-25");
 
     private Double potOntMax = new Double("-8");
 

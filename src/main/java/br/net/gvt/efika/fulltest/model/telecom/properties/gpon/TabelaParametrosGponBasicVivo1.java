@@ -7,7 +7,7 @@ package br.net.gvt.efika.fulltest.model.telecom.properties.gpon;
 
 import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
 
-public class TabelaParametrosGponBasicVivo1 extends TabelaParametrosGponBasic {
+public class TabelaParametrosGponBasicVivo1 extends TabelaParametrosGpon {
 
     public TabelaParametrosGponBasicVivo1() {
         super();
@@ -15,16 +15,26 @@ public class TabelaParametrosGponBasicVivo1 extends TabelaParametrosGponBasic {
 
     @Override
     public Double getPotOntMin() {
-        return new Double("-8");
-    }
-
-    @Override
-    public Double getPotOntMax() {
         return new Double("-26");
     }
 
     @Override
+    public Double getPotOntMax() {
+        return new Double("-8");
+    }
+
+    @Override
+    public Double getPotOltMin() {
+        return null;
+    }
+
+    @Override
+    public Double getPotOltMax() {
+        return null;
+    }
+
+    @Override
     public Boolean validar(EfikaCustomer e) {
-        return super.validar(e);
+        return this.getPotOnt().compareTo(this.getPotOntMax()) <= 0 && this.getPotOnt().compareTo(this.getPotOntMin()) >= 0;
     }
 }
