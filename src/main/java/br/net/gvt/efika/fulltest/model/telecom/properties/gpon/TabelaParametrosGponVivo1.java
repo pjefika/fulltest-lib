@@ -9,8 +9,6 @@ import br.net.gvt.efika.efika_customer.model.customer.EfikaCustomer;
 
 public class TabelaParametrosGponVivo1 extends TabelaParametrosGponBasicVivo1 {
 
-    private Double potOlt;
-
     public TabelaParametrosGponVivo1() {
         super();
     }
