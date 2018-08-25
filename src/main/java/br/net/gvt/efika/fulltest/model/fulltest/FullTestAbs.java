@@ -1,12 +1,12 @@
-package br.net.gvt.efika.fulltest.model.fulltest;
-
-import java.util.Calendar;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.net.gvt.efika.fulltest.model.fulltest;
+
+import java.util.Calendar;
+
 /**
  *
  * @author G0042204
@@ -20,8 +20,6 @@ public abstract class FullTestAbs {
     protected Calendar dataFim;
 
     protected String mensagem;
-    
-    protected Integer id;
 
     public FullTestAbs() {
     }
@@ -63,14 +61,6 @@ public abstract class FullTestAbs {
 
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
 }
