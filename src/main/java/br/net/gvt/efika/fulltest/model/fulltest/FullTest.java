@@ -19,8 +19,15 @@ public class FullTest extends FullTestAbs {
 
     protected List<ValidacaoResult> valids;
 
+    protected String owner;
+
     public FullTest() {
         valids = new ArrayList<>();
+    }
+
+    public FullTest(String owner) {
+        this.valids = new ArrayList<>();
+        this.owner = owner;
     }
 
     public EfikaCustomer getCl() {
@@ -37,6 +44,14 @@ public class FullTest extends FullTestAbs {
 
     public void setValids(List<ValidacaoResult> valids) {
         this.valids = valids;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
 }

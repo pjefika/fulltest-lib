@@ -19,4 +19,10 @@ public class FulltestServiceImpl implements FulltestService {
                 new FulltestRequest(request.getCust(), request.getExecutor()));
     }
 
+    @Override
+    public FullTest getById(String ownerId) throws Exception {
+        FactoryHttpDAOAbstract<FullTest> fac = new FactoryHttpDAOAbstract(FullTest.class);
+        return (FullTest) fac.createWithoutProxy().get(Urls.FULLTEST_BY_ID.getUrl() + ownerId);
+    }
+
 }
