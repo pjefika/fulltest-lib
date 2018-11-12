@@ -9,6 +9,7 @@ package br.net.gvt.efika.fulltest.model.fulltest;
 @SuppressWarnings("all")
 public class Solucao {
 
+    private Integer id;
     private String problema;
     private String solucao;
 
@@ -18,6 +19,20 @@ public class Solucao {
     public Solucao(String problema, String solucao) {
         this.problema = problema;
         this.solucao = solucao;
+    }
+
+    public Solucao(Integer id, String problema, String solucao) {
+        this.id = id;
+        this.problema = problema;
+        this.solucao = solucao;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getProblema() {
@@ -39,7 +54,8 @@ public class Solucao {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Solucao{");
-        sb.append("problema='").append(problema).append('\'');
+        sb.append("id=").append(id);
+        sb.append(", problema='").append(problema).append('\'');
         sb.append(", solucao='").append(solucao).append('\'');
         sb.append('}');
         return sb.toString();
