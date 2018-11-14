@@ -12,6 +12,7 @@ public class Solucao {
     private Integer id;
     private String problema;
     private String solucao;
+    private Boolean leituraConfirmada;
 
     public Solucao() {
     }
@@ -51,12 +52,21 @@ public class Solucao {
         this.solucao = solucao;
     }
 
+    public Boolean getLeituraConfirmada() {
+        return leituraConfirmada;
+    }
+
+    public void setLeituraConfirmada(Boolean leituraConfirmada) {
+        this.leituraConfirmada = leituraConfirmada;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Solucao{");
         sb.append("id=").append(id);
         sb.append(", problema='").append(problema).append('\'');
         sb.append(", solucao='").append(solucao).append('\'');
+        sb.append(", leituraConfirmada=").append(leituraConfirmada);
         sb.append('}');
         return sb.toString();
     }
