@@ -16,7 +16,9 @@ public class VlanBandaVivo1Huawei extends VlanBandaVivo1 {
 
     @Override
     public Boolean validar(EfikaCustomer e) {
-        return getGemport().compareTo((e.getRede().getLogica() + 128)) == 0 && getSvlan().compareTo(e.getRede().getRin()) == 0;
+        return getCvlan().compareTo(e.getRede().getCvlan()) == 0
+                && getGemport().compareTo((e.getRede().getLogica() + 128)) == 0
+                && getSvlan().compareTo(e.getRede().getRin()) == 0;
     }
 
     public Integer getGemport() {
