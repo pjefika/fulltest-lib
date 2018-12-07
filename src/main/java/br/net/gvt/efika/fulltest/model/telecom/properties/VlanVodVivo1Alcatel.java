@@ -12,4 +12,8 @@ public class VlanVodVivo1Alcatel extends VlanVodVivo1 {
         super(5);
     }
     
+    public VlanVodVivo1Alcatel(Integer vlanFixo) {
+        super(vlanFixo);
+    }
+    
 }
