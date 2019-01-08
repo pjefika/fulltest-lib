@@ -5,6 +5,9 @@
  */
 package br.net.gvt.efika.fulltest.exception;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author G0041775
@@ -33,6 +36,7 @@ public class TratativaExcessao {
                 || e instanceof WorkOrderInexException) {
             throw e;
         }
+        e.printStackTrace();
         throw new FalhaComunicacaoDslam();
     }
 }
