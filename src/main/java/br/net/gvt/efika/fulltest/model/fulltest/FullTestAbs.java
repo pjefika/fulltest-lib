@@ -6,6 +6,7 @@
 package br.net.gvt.efika.fulltest.model.fulltest;
 
 import java.util.Calendar;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  *
