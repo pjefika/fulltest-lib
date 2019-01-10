@@ -15,8 +15,10 @@ public abstract class FullTestAbs {
 
     protected Boolean resultado;
 
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     protected Calendar dataInicio;
 
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     protected Calendar dataFim;
 
     protected String mensagem;
